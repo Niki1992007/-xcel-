@@ -13,7 +13,7 @@
 	<div id="form_container">
 		
 		<h1><a>Вводимые значения</a></h1>
-		<form id="form_9398" class="appnitro"  method="post" action="">
+		<form id="form_9398" class="appnitro"  method="post" action="php/handler.php">
 			<div class="form_description">
 				<h2>Вводимые значения</h2>
 				<p>Значения этой формы, отобразятся в конечном файле, который будет доступен для скачивания</p>
@@ -49,8 +49,8 @@
 					<div>
 						<select class="element select medium" id="element_6" name="element_6"> 
 							<option value="" selected="selected"></option>
-							<option value="1" >Мужской</option>
-							<option value="2" >Женский</option>
+							<option value="Мужской">Мужской</option>
+							<option value="Женский">Женский</option>
 
 						</select>
 					</div> 
@@ -93,7 +93,7 @@
 					<label class="description" for="element_12">Вес,кг </label>
 					<div>
 						<input id="element_12" name="element_12" class="element text medium" type="text" maxlength="255" value=""/> 
-					</div><p class="guidelines" id="guide_12"><small>Введите вес. Числа с "плавающим значениями" допустимы"</small></p> 
+					</div><p class="guidelines" id="guide_12"><small>Введите вес.</small></p> 
 				</li>		<li class="section_break">
 					<h3></h3>
 					<p></p>
@@ -101,7 +101,7 @@
 					<label class="description" for="element_14">Рост, см </label>
 					<div>
 						<input id="element_14" name="element_14" class="element text medium" type="text" maxlength="255" value=""/> 
-					</div><p class="guidelines" id="guide_14"><small>Введите рост. Числа с "плавающими значениями" допустимы"</small></p> 
+					</div><p class="guidelines" id="guide_14"><small>Введите рост.</small></p> 
 				</li>
 				
 				<li class="buttons">

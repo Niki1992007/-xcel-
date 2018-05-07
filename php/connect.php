@@ -2,8 +2,16 @@
 $hostDB = "localhost";
 $adminDB = "root";
 $passwordDB = ""; /* Без пароля */
-$database_name = "daltasertDB";
 $tableDB_name = "input_data";
+$database_name = "daltasertDB";
+$connection = mysql_connect($hostDB, $adminDB, $passwordDB);
 
-$link = mysqli_connect($hostDB, $adminDB, $passwordDB, $database_name) or DIE ("Не могу создать соединение");
+mysql_select_db($database_name);
+
+mysql_query(" SET NAMES 'utf8' ");
+
+if (!$connection || !$database_name) 
+{
+	exit(mysql_error());
+}
 ?>
