@@ -295,11 +295,16 @@ form .section_break p
 }
 
 /**** Buttons ****/
-input.button_text
+input.button_text,
+input.download_button
 {
 	overflow:visible;
 	padding:0 7px;
 	width:auto;
+}
+.download_button {
+	margin-left: 15rem;
+	height: 3rem;
 }
 
 .buttons input
@@ -862,4 +867,3 @@ border-bottom: 1px solid #999;
 background: #dedede;
 font-weight: bold;
 }
-

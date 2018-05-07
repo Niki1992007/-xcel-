@@ -22,12 +22,7 @@ if (isset($_POST['submit'])) {
 
 	");
 
-	echo 'Данные поступили';
-
 	mysql_close();
 } 
-
-else {
-	echo 'Что-то опять пошло не так!';
-}
+header('Location: http://daltasert.ru/php/download.php');
 ?>
