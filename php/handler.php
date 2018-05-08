@@ -16,13 +16,12 @@ if (isset($_POST['submit'])) {
 
 	$result = mysql_query (" 
 
-		INSERT INTO input_data(surname, name, second_name, sex, day_birthday, month_birthday, year_birthday, weight, height) 
-		VALUES ('$client_surname', '$client_name', '$client_second_name', '$client_sex','$client_day_birthday',
-		'$client_month_birthday', '$client_year_birthday', '$client_weight', '$client_height')
+		INSERT INTO input_data(surname, name, second_name, sex, day_birthday, month_birthday, year_birthday, weight, height, recording_time) 
+		VALUES ('$client_surname', '$client_name', '$client_second_name', '$client_sex','$client_day_birthday','$client_month_birthday', '$client_year_birthday', '$client_weight', '$client_height', '".time()."' )
 
 	");
-
+	
 	mysql_close();
 } 
-header('Location: http://daltasert.ru/php/download.php');
+header('Location: http://daltasert.ru/download.html');
 ?>

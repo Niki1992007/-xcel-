@@ -2,3 +2,5 @@
     DirectoryIndex index.php
 </IfModule>
 
+AddDefaultCharset utf-8
+

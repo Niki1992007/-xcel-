@@ -10,5 +10,6 @@ CREATE TABLE `daltasertDB`.`input_data` (
 	`year_birthday` INT (30) NOT NULL ,
 	`weight` INT (30) NOT NULL ,
 	`height` INT (30) NOT NULL ,
+	`recording_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
 	PRIMARY KEY (`user_id`))
 ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_general_ci;
