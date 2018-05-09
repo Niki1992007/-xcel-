@@ -22,7 +22,7 @@ $active_sheet->SetTitle("Лист_1"); //Задаём название акти�
 
 //указываем семейство и размер шрифта выводимых данных
 $objPHPExcel->getDefaultStyle()->getFont()->setName('Arial');
-$objPHPExcel->getDefaultStyle()->getFont()->setSize(8);
+$objPHPExcel->getDefaultStyle()->getFont()->setSize(10);
 
 //Задаём рамер ячеек
 $active_sheet->GetColumnDimension('A')->setWidth(25);
@@ -69,7 +69,79 @@ foreach ($show_data as $item) {
 	$active_sheet->setCellValue('J'.$row_next,$item['user_id']);
 	$i++;
 }
-$active_sheet->getStyle()->appleFromArray($style_wrap);
+// Установка границ
+
+
+$style_wrap = array(
+	'borders'=>array(
+		'outline' =>array(
+			'style'=>PHPExcel_Style_Border::BORDER_THICK
+		),
+		'allborders'=> array(
+			'style'=>PHPExcel_Style_Border::BORDER_THIN,
+			'color'=> array(
+				'rgb'=>'696969'
+			)
+		)
+	)
+);
+
+$active_sheet->getStyle('A1:J' .($i + 4))->applyFromArray($style_wrap);
+
+// Выравнивание в шапке и заливка цветом
+$style_header = array(
+	'font'=>array(
+		'bold'=> true,
+		'name'=> 'Times New Roman',
+		'size' => 18
+	),
+	'alignment'=>array(
+		'horizontal' => PHPExcel_STYLE_ALIGNMENT::HORIZONTAL_CENTER,
+		'vertical' => PHPExcel_STYLE_ALIGNMENT::VERTICAL_CENTER,
+	),
+	'fill' => array(
+		'type' => PHPExcel_STYLE_FILL::FILL_SOLID,
+		'color' => array(
+			'rgb' => 'CFCFCF'
+		)
+	)
+);
+
+$active_sheet->getStyle('A1:J1')->applyFromArray($style_header);
+
+//Шрифт для даты и типов значений
+$style_mytext = array(
+	'font'=>array(
+		'bold'=> true
+	),
+	'alignment'=>array(
+		'horizontal' => PHPExcel_STYLE_ALIGNMENT::HORIZONTAL_CENTER,
+		'vertical' => PHPExcel_STYLE_ALIGNMENT::VERTICAL_CENTER,
+	),
+	'fill' => array(
+		'type' => PHPExcel_STYLE_FILL::FILL_SOLID,
+		'color' => array(
+			'rgb' => '#ffff00'
+		)
+	)
+);
+
+$style_mytext_data = array(
+'alignment'=>array(
+		'horizontal' => PHPExcel_STYLE_ALIGNMENT::HORIZONTAL_CENTER,
+		'vertical' => PHPExcel_STYLE_ALIGNMENT::VERTICAL_CENTER,
+	),
+'fill' => array(
+		'type' => PHPExcel_STYLE_FILL::FILL_SOLID,
+		'color' => array(
+			'rgb' => '#2da0ec'
+		)
+	)
+);
+
+$active_sheet->getStyle('A4:J4')->applyFromArray($style_mytext);
+$active_sheet->getStyle('I2:J2')->applyFromArray($style_mytext_data);
+
 
 $date = date('d-m-Y'); //Переменная для текщей даты
 $active_sheet->setCellValue('J2', $date);
